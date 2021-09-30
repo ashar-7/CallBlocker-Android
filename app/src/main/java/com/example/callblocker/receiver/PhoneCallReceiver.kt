@@ -34,7 +34,6 @@ class PhoneCallReceiver : BroadcastReceiver() {
 
             if (phoneState == TelephonyManager.EXTRA_STATE_RINGING && phoneNumber != null) {
                 goAsync {
-                    println(phoneNumber)
                     val contact = repository.search(phoneNumber).firstOrNull()
                     if (contact != null) {
                         if (endCall(context)) {
