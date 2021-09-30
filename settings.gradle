@@ -1,0 +1,29 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+    plugins {
+        id 'com.android.application' version '7.1.0-alpha12'
+        id 'com.android.library' version '7.1.0-alpha12'
+        id 'org.jetbrains.kotlin.android' version '1.5.21'
+        id 'org.jetbrains.kotlin.kapt' version '1.5.21'
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if(requested.id.id == "dagger.hilt.android.plugin") {
+                useModule("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "CallBlocker"
+include ':app'

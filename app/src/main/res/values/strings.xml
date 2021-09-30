@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CallBlocker</string>
+    <string name="blocklist_top_bar_title">BlockList</string>
+    <string name="blocklist_add_new_button_text">Add New</string>
+    <string name="blocklist_empty_screen_message">No contacts blocked yet.\nBlock contacts by clicking on the Add New button.</string>
+    <string name="blocklist_top_bar_message">Tap on a contact to edit it</string>
+    <string name="add_to_blocklist_name_field_hint">Name</string>
+    <string name="add_to_blocklist_phone_field_hint">Phone Number</string>
+    <string name="add_to_blocklist_save_button_text">Save</string>
+    <string name="add_to_blocklist_import_contact">Import</string>
+    <string name="add_to_blocklist_import_contact_icon_desc">Import Contact</string>
+    <string name="channel_name">Blocked Calls</string>
+    <string name="notification_blockedcall_title">"Call blocked from %s"</string>
+    <string name="blocklist_remove_contact_icon_desc">Unblock Contact</string>
+    <string name="blocklist_unblock_dialog_title">Confirmation</string>
+    <string name="blocklist_unblock_dialog_text">Are you sure you want to unblock this contact?</string>
+    <string name="blocklist_unblock_dialog_confirm_text">Yes</string>
+    <string name="blocklist_unblock_dialog_dismiss_text">No</string>
+    <string name="block_call_permissions_not_granted">Permissions not granted. App will not be able to block calls.</string>
+</resources>
