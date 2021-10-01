@@ -1,7 +1,7 @@
 # CallBlocker-Android
-Android app to block incoming calls from selected numbers
+Android app to block incoming calls from selected numbers.
 
-Implemented for an assignment. Only works on devices below API 29 for now.
+Implemented for an assignment. Works on API 21+
 
 ## Screenshots
 <img src="screenshots/blocklist.png" width=200 /> <img src="screenshots/addtoblocklist.png" width=200 />
