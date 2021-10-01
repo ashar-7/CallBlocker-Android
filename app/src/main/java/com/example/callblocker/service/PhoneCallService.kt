@@ -6,6 +6,7 @@ import android.telecom.CallScreeningService
 import androidx.annotation.RequiresApi
 import com.example.callblocker.notification.BlockedCallNotificationManager
 import com.example.callblocker.repository.BlockListRepository
+import com.example.callblocker.util.CallScreeningServiceRequiredApi
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 import java.net.URLDecoder
 import javax.inject.Inject
 
-@RequiresApi(Build.VERSION_CODES.Q)
+@RequiresApi(CallScreeningServiceRequiredApi)
 @AndroidEntryPoint
 class PhoneCallService : CallScreeningService() {
 
@@ -22,7 +23,7 @@ class PhoneCallService : CallScreeningService() {
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onScreenCall(callDetails: Call.Details) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) return
+        if (Build.VERSION.SDK_INT < CallScreeningServiceRequiredApi) return
 
         val phoneNumber = URLDecoder.decode(callDetails.handle.toString(), "UTF-8")
 

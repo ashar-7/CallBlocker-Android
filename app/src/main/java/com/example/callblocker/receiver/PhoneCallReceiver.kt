@@ -9,6 +9,7 @@ import android.util.Log
 import com.android.internal.telephony.ITelephony
 import com.example.callblocker.notification.BlockedCallNotificationManager
 import com.example.callblocker.repository.BlockListRepository
+import com.example.callblocker.util.CallScreeningServiceRequiredApi
 import com.example.callblocker.util.goAsync
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -28,7 +29,7 @@ class PhoneCallReceiver : BroadcastReceiver() {
      */
     @OptIn(DelicateCoroutinesApi::class)
     override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action == RECEIVER_ACTION && Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+        if (intent.action == RECEIVER_ACTION && Build.VERSION.SDK_INT < CallScreeningServiceRequiredApi) {
             val phoneState = intent.getStringExtra(TelephonyManager.EXTRA_STATE)
             val phoneNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
 
